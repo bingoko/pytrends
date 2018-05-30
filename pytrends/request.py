@@ -72,6 +72,10 @@ class TrendReq(object):
         :return:
         """
         s = requests.session()
+        s.headers.update({'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'})
+        s.headers.update({'accept-encoding': 'gzip, deflate, br'})
+        s.headers.update({'accept-language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7'})
+        s.headers.update({'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36'})
         if self.proxies != '':
             s.proxies.update(self.proxies)
         if method == TrendReq.POST_METHOD:
